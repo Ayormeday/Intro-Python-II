@@ -1,4 +1,6 @@
 from room import Room
+from player import Player
+
 
 # Declare all the rooms
 
@@ -49,3 +51,32 @@ room['treasure'].s_to = room['narrow']
 # Print an error message if the movement isn't allowed.
 #
 # If the user enters "q", quit the game.
+
+possible_directions = ['N', 'S', 'E', 'W']
+direction_list = []
+initial_room = 'outside'
+new_player = Player(room[initial_room], [])
+
+quit_game = False
+
+
+def main():
+    global possible_directions, initial_room, new_player, quit_game
+
+    while not quit_game:
+        #player's initial location
+        print(f"Player arrives at the {new_player.room.name}")
+        print(f"{new_player.room.description}")
+
+        #directions player can travel
+        for direction in possible_directions:
+            if direction in direction_list:
+                print(f"{direction} is a possible route to take")
+            else:
+                print(f"Not a valid route!")
+
+        #items visible to players in the room
+        print("These items are visible in this room")
+
+
+

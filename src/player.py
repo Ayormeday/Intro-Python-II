@@ -3,7 +3,8 @@
 
 class Player:
     #constructor
-    def __init__(self, name, information = []):
-        #attribute(name, room)
+    def __init__(self,name, room, inventory = []):
+        #attribute(room)
         self.name = name
-        self.information = information
+        self.room = room
+        self.inventory = inventory
