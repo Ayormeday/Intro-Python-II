@@ -3,6 +3,12 @@ from player import Player
 from items import Items
 
 # Declare all the rooms
+items = [
+  Item('Napkin', 'A damaged piece of cloth napkin.', 1),
+  Item('Sword', 'A good-looking weapon.', 1),
+  Item('Rock', 'Rubble from ancient structures.', 3),
+  Item('Coin', 'A golden coin from an ancient civilization.', 2),
+]
 
 room = {
     'outside':  Room("Outside Cave Entrance",
@@ -109,7 +115,7 @@ def main():
                 print('\nThere is nothing in your inventory!')
         elif input_direction in ['Q', 'QUIT', 'EXIT', 'STOP']:
             print("Giving up already? Weak adventurers shouldn't even have started!")
-            quitGame = True
+            quit_game = True
         else:
             print('Invalid command.')
 
