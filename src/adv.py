@@ -77,6 +77,8 @@ def main():
 
         #items visible to players in the room
         print("These items are visible in this room")
+        for item in new_player.room.items:
+           print(f"\n {item.name}\n {item.description}")
 
 
 
