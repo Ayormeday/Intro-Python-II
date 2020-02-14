@@ -4,29 +4,35 @@ from items import Items
 
 # Declare all the rooms
 items = [
-  Item('Napkin', 'A damaged piece of cloth napkin.', 1),
-  Item('Sword', 'A good-looking weapon.', 1),
-  Item('Rock', 'Rubble from ancient structures.', 3),
-  Item('Coin', 'A golden coin from an ancient civilization.', 2),
+  Items('Napkin', 'A damaged piece of cloth napkin.', 1),
+  Items('Sword', 'A good-looking weapon.', 1),
+  Items('Rock', 'Rubble from ancient structures.', 3),
+  Items('Coin', 'A golden coin from an ancient civilization.', 2),
+  Items('Knife', 'Break bounds no limits', 4),
 ]
 
+def createItem(i):
+  item = items[i]
+  return Items(item.name, item.description, item.qty)
+
 room = {
+
     'outside':  Room("Outside Cave Entrance",
-                     "North of you, the cave mount beckons"),
+                     "North of you, the cave mount beckons"), [createItem(1), createItem(4)]
 
     'foyer':    Room("Foyer", """Dim light filters in from the south. Dusty
-passages run north and east."""),
+                        passages run north and east."""), [createItem(0), createItem(2)]
 
     'overlook': Room("Grand Overlook", """A steep cliff appears before you, falling
 into the darkness. Ahead to the north, a light flickers in
-the distance, but there is no way across the chasm."""),
+the distance, but there is no way across the chasm."""), [createItem(2)]
 
     'narrow':   Room("Narrow Passage", """The narrow passage bends here from west
-to north. The smell of gold permeates the air."""),
+to north. The smell of gold permeates the air."""), [createItem(1), createItem(2)]
 
     'treasure': Room("Treasure Chamber", """You've found the long-lost treasure
 chamber! Sadly, it has already been completely emptied by
-earlier adventurers. The only exit is to the south."""),
+earlier adventurers. The only exit is to the south."""), [createItem(3)]
 }
 
 

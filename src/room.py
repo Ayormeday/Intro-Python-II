@@ -3,10 +3,9 @@
 from items import Items
 
 class Room:
-    def __init__(self, name, description, key, items = []):
+    def __init__(self, name, description, items = []):
         self.name = name
         self.description = description
-        self.key = key
         self.items = items
 
     def getItem(self, loot, qty = 1):
